@@ -1,25 +1,23 @@
 // 仓库配置中心
 
 module.exports = {
-  H5: {
+  h5: {
     repoOrigin: "gitlab",
-    hostname: "git.xx.com",
-    templateAddress: "lj/tpl",
+    hostname: "git.jdb-dev.com",
+    templateAddress: "",
     // 预留支持分支下载功能
     branch: ""
   },
   web: {
     repoOrigin: "gitlab",
-    hostname: "git.xx.com",
-    templateAddress: "lj/tpl",
-    // 预留支持分支下载功能
+    hostname: "git.jdb-dev.com",
+    templateAddress: "",
     branch: ""
   },
   node: {
     repoOrigin: "gitlab",
-    hostname: "git.xx.com",
-    templateAddress: "lj/tpl",
-    // 预留支持分支下载功能
+    hostname: "git.jdb-dev.com",
+    templateAddress: "",
     branch: ""
   }
 }

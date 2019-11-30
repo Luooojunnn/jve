@@ -5,12 +5,12 @@ const initModules = require("./modules/init-modules");
 
 /**
  *
- * @param {string[]} inquirerCommandList - 需要注册的对话列表([] 或者是含有i的指令)
+ * @param {string[]} template - 需要注册的对话列表([] 或者是含有i的指令)
  */
-async function initTplView(inquirerCommandList) {
+async function initTplView(template) {
   console.clear();
-
-  let basePromptList = [
+  
+  let base = [
     {
       type: "list",
       name: "projectType",
@@ -18,25 +18,25 @@ async function initTplView(inquirerCommandList) {
       message: "模板类型:",
       choices: [
         {
+          name: "h5",
+          value: "h5"
+        },
+        {
           name: "web",
           value: "web"
         },
-        {
-          name: "H5",
-          value: "H5"
-        },
-        {
-          name: "node",
-          value: "node"
-        }
-      ]
+        // {
+        //   name: "node",
+        //   value: "node"
+        // }
+      ],
+      when() {
+        return template.length === 0
+      }
     }
   ];
 
-  let promptList = basePromptList.concat(initModules(inquirerCommandList));
-
-  inquirerCommandList.length && promptList.shift();
-
+  let promptList = base.concat(initModules(template));
   return inquirer.prompt(promptList);
 }
 

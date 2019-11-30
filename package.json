@@ -1,21 +1,30 @@
 {
   "name": "jve",
-  "version": "0.1.0",
-  "description": "脚手架工具，获取自定义标准模板",
+  "version": "0.2.8",
+  "description": "标准模板获取工具",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://git.jdb-dev.com/zen/jve"
+  },
+  "scripts": {
+    "predeploy": "npm version patch"
+  },
   "bin": {
     "jve": "bin/jve.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "download-git-repo": "^2.0.0",
+    "download-git-repo": "3.0.0",
     "execa": "1.0.0",
     "handlebars": "^4.1.2",
     "inquirer": "^6.3.1",
+    "ora": "^3.4.0",
     "semver": "^6.1.1"
   },
   "engines": {
     "node": ">=8.6"
-  }
+  },
+  "preferGlobal": true
 }
